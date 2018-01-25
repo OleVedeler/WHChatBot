@@ -16,17 +16,17 @@ namespace Microsoft.Bot.Sample.FormBot
         OvenRoastedChicken, RoastBeef, RotisserieStyleChicken, SpicyItalian, SteakAndCheese, SweetOnionTeriyaki, Tuna,
         TurkeyBreast, Veggie
     };
-    public enum LengthOptions { SixInch, FootLong };
-    public enum BreadOptions { NineGrainWheat, NineGrainHoneyOat, Italian, ItalianHerbsAndCheese, Flatbread };
-    public enum CheeseOptions { American, MontereyCheddar, Pepperjack };
+    public enum LengthOptions { What, Is };
+    public enum BreadOptions { Going, On, Here, Questionmark, This };
+    public enum CheeseOptions { Is, Not, My };
     public enum ToppingOptions
     {
-        Avocado, BananaPeppers, Cucumbers, GreenBellPeppers, Jalapenos,
-        Lettuce, Olives, Pickles, RedOnion, Spinach, Tomatoes
+        House, In, The, Midel, Of,
+        Our, Claouse, You, Should, Not, Go
     };
     public enum SauceOptions
     {
-        ChipotleSouthwest, HoneyMustard, LightMayonnaise, RegularMayonnaise,
+        Back, To, The, Future,
         Mustard, Oil, Pepper, Ranch, SweetOnion, Vinegar
     };
 
@@ -44,11 +44,11 @@ namespace Microsoft.Bot.Sample.FormBot
         {
             OnCompletionAsyncDelegate<SandwichOrder> processOrder = async (context, state) =>
             {
-                await context.PostAsync("This is the end of the form, you would give a final confirmation, and then start the ordering process as needed.");
+                await context.PostAsync("You did it!");
             };
 
             return new FormBuilder<SandwichOrder>()
-                    .Message("Welcome to the simple sandwich order bot!")
+                    .Message("Our House, In the middel of our house")
                     .OnCompletion(processOrder)
                     .Build();
         }
